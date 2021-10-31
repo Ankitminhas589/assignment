@@ -18,4 +18,7 @@ export const IMAGE_ASSETS = {
     ICON_FREEZE: require('../../../assets/icon_freeze_card.png'),
     ICON_ADD_CARD: require('../../../assets/icon_add_card.png'),
     ICON_VISA_WHITE: require('../../../assets/icon_visa_white.png'),
+    ICON_RED_EYE_CLOSE: require('../../../assets/icon_red_eye_close.png'),
+    ICON_RED_EYE_OPEN: require('../../../assets/icon_red_eye_open.png'),
+    ICON_CARD_BRAND: require('../../../assets/icon_card_brand.png'),
 }

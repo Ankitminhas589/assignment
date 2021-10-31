@@ -7,9 +7,9 @@ type IProps = {
     childContainerStyle?: ViewStyle | Array<ViewStyle>;
     safeAreStyle?: ViewStyle | Array<ViewStyle>;
     children: React.ReactNode;
-    showHeader: Boolean;
-    statusBarColor: string;
-    onBackPress: () => void
+    statusBarColor?: string;
+    headerTitle?: string;
+    onBackPress?: () => void
 };
 
 const ScreenComponent: React.FC<IProps> = ({
@@ -17,31 +17,26 @@ const ScreenComponent: React.FC<IProps> = ({
     childContainerStyle = {},
     safeAreStyle,
     children,
-    showHeader = false,
     statusBarColor,
     onBackPress = () => { }
 }) => {
     return (
-        <SafeAreaView style={safeAreStyle || styles.flex1}>
+        <SafeAreaView style={safeAreStyle || styles.defaultSafeAreaStyle}>
             <View style={contentContainerStyle || styles.defaultContentContainerStyle}>
                 <StatusBar backgroundColor={statusBarColor || AppColors.PRIMARY} animated barStyle={'dark-content'} />
-                <View style={childContainerStyle || styles.defaultChildContentContainerStyle}>
-                    {children}
-                </View>
+                {children}
             </View>
         </SafeAreaView>
     )
 };
 const styles = StyleSheet.create({
-    flex1: {
-        flex: 1
+    defaultSafeAreaStyle: {
+        flex: 1, backgroundColor: AppColors.PRIMARY
     },
     defaultContentContainerStyle: {
         flex: 1, backgroundColor: AppColors.WHITE
     },
-    defaultChildContentContainerStyle: {
-        flex: 1, backgroundColor: AppColors.WHITE
-    }
+
 });
 
 export default ScreenComponent;
