@@ -16,8 +16,8 @@ const HeaderContentComponent: React.FC<IProps> = ({
     headerTitle,
     availableBalance=0
 }) => {
-    function numberWithCommas(x: number) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    function numberWithCommas(input: number) {
+        return input.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
     return (
         <View style={styles.mainContainer}>
