@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
         fontSize: _scaleText(13).fontSize,
         fontWeight: '600',
         fontFamily: FONTS.AvenirNextLTPro_Bold,
-        letterSpacing: 5
+        letterSpacing: 4
     },
     cvvExpiryContainer: {
         flexDirection: 'row'
