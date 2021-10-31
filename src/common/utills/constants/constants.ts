@@ -7,6 +7,8 @@ export const CONSTANTS = {
     HIDDEN_CARD_DOTS: '●●●●●●●●●●●●',
     CVV_PREFIX: 'CVV: ',
     EXP_DATE_PREFIX: 'Thru: ',
+    LOADING: 'Loading...',
+    SORRY_ERROR: 'Sorry, connection with server failed.',
     OPTION_TITLE_DEBIT_TOP_UP: 'Top-up account',
     OPTION_SUBTITLE_TOP_UP: 'Deposit money to your account to use with card',
     OPTION_TITLE_WEEKLY_SPENDING: 'Weekly spending limit',
