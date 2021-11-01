@@ -20,7 +20,8 @@ const SetLimitScreen = () => {
     const onSubmit = () => {
         if (value && value != "") {
             let formattedValue: any = `${value}`;
-            formattedValue = formattedValue.replaceAll(',', '');
+            formattedValue = formattedValue.replace(/,/g, "");
+
             formattedValue = Number(formattedValue) || 0;
             dispatch(updateUserWeeklyLimit(formattedValue))
             navigation.goBack();

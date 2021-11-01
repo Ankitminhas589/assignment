@@ -3,7 +3,8 @@ import { Text, StyleSheet, View, TextInput, } from 'react-native';
 import { CONSTANTS } from '../utills/constants/constants';
 import { AppColors } from '../utills/theme/Colors';
 import { _scaleText } from '../utills/utility';
-
+import "intl";
+import "intl/locale-data/jsonp/en";
 type IProps = {
     onValueChange: (val: string) => void,
     value: string
@@ -15,7 +16,7 @@ const CurrencyTextInputComponent: React.FC<IProps> = ({
 }) => {
     const validateEnteredValue = (val: any) => {
         if(val&&val!=""){
-            val = val.replaceAll(',', '');
+            val = val.replace(/,/g,"");
         }
         if (val == '') {
             onValueChange("")
