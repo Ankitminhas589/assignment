@@ -106,7 +106,7 @@ const DebitCardTab = () => {
                         :
                         <>
                             <HeaderContentComponent headerTitle={CONSTANTS.DEBIT_CARD_HEADER_TITLE} availableBalance={userData?.account_details?.available_balance}></HeaderContentComponent>
-                            <ScrollView
+                            <ScrollView testID="debit-card-tab-main-scroll-view"
                                 contentContainerStyle={styles.compensateBottomBar}
                                 showsVerticalScrollIndicator={false}
                                 style={styles.scrollViewMainContainer}

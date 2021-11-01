@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image with loader tests renders correcly 1`] = `
+<RCTSwitch
+  accessibilityRole="switch"
+  onChange={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  onTintColor="#04d167"
+  style={
+    Array [
+      Object {
+        "height": 31,
+        "width": 51,
+      },
+      Array [
+        Object {
+          "marginRight": 20,
+          "transform": Array [
+            Object {
+              "scaleX": 0.8,
+            },
+            Object {
+              "scaleY": 0.8,
+            },
+          ],
+        },
+        Object {
+          "backgroundColor": "#04d167",
+          "borderRadius": 16,
+        },
+      ],
+    ]
+  }
+  thumbTintColor="#ffffff"
+  tintColor="#a7a7a7"
+  value={true}
+/>
+`;
