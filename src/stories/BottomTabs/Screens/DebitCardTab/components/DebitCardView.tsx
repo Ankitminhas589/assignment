@@ -5,7 +5,7 @@ import { FONTS } from '../../../../../common/utills/constants/fonts';
 import { IMAGE_ASSETS } from '../../../../../common/utills/constants/images';
 import { AppColors } from '../../../../../common/utills/theme/Colors';
 import { _scaleText } from '../../../../../common/utills/utility';
-import { AccountDetailType } from '../types';
+import { AccountDetailType } from '../../../../../common/utills/constants/types';
 
 type IProps = {
     cardHolderName: String;
@@ -61,9 +61,9 @@ const DebitCardView: React.FC<IProps> = ({
                     <Text style={styles.textCardHolderName}>{cardHolderName}</Text>
                     {
                         isVisible ?
-                            <Text style={styles.debitCardNumber}>{accountDetails?.debit_card?.card_number ? creditCardNumberWithSpace(accountDetails.debit_card.card_number) : ""}</Text>
+                            <Text style={styles.debitCardNumber}>{accountDetails?.debit_card?.card_number ? creditCardNumberWithSpace(accountDetails?.debit_card?.card_number) : ""}</Text>
                             :
-                            <Text style={styles.debitCardNumber}>{creditCardNumberWithSpace(`${CONSTANTS.HIDDEN_CARD_DOTS}${getLastourDigits(accountDetails.debit_card.card_number)}`)}</Text>
+                            <Text style={styles.debitCardNumber}>{creditCardNumberWithSpace(`${CONSTANTS.HIDDEN_CARD_DOTS}${getLastourDigits(accountDetails?.debit_card?.card_number)}`)}</Text>
                     }
                     <View style={styles.cvvExpiryContainer}>
                         <Text style={styles.expiry}>{`${CONSTANTS.EXP_DATE_PREFIX}${accountDetails?.debit_card?.card_expiry}`}</Text>
