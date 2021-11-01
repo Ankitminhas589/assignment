@@ -15,6 +15,8 @@ are kept in root/screen_shots folder please go through it
 Setup react-native Enviornment 
 https://reactnative.dev/docs/environment-setup
 
+- Clone project from github
+- choose dev branch
 # iOS
 - In the root Folder run
   yarn or npm install
