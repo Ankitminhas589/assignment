@@ -17,6 +17,7 @@ export const CONSTANTS = {
     OPTION_SUBTITLE_TOP_UP: 'Deposit money to your account to use with card',
     OPTION_TITLE_WEEKLY_SPENDING: 'Weekly spending limit',
     OPTION_SUBTITLE_WEEKLY_SPENDING: 'You havn\'t set any spending limit on card',
+    OPTION_SUBTITLE_WEEKLY_SPENDING_ENABLE: 'Your weekly spending limit is S$ ',
     OPTION_TITLE_FREEZE_CARD: 'Freeze card',
     OPTION_SUBTITLE_FREEZE_CARD: 'Your debit card is currently active',
     OPTION_TITLE_GET_NEW_CARD: 'Get a new card',
