@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image with loader tests renders correcly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "borderBottomWidth": 0.5,
+      "borderColor": "#a7a7a7",
+      "flexDirection": "row",
+      "paddingVertical": 20,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#04d167",
+        "borderRadius": 8,
+        "height": 40,
+        "justifyContent": "center",
+        "width": 70,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontSize": 24,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      S$
+    </Text>
+  </View>
+  <TextInput
+    keyboardType="numeric"
+    onChangeText={[Function]}
+    style={
+      Object {
+        "flex": 1,
+        "marginLeft": 30,
+      }
+    }
+    value=""
+  />
+</View>
+`;
