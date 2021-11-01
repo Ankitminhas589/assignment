@@ -8,6 +8,7 @@ import { CONSTANTS } from '../../../../common/utills/constants/constants';
 import { IMAGE_ASSETS } from '../../../../common/utills/constants/images';
 import { UserData } from '../../../../common/utills/constants/types';
 import { AppColors } from '../../../../common/utills/theme/Colors';
+import { _scaleText } from '../../../../common/utills/utility';
 import { getAppUserData, updateUserWeeklyLimit } from '../../../../core/actions';
 import { IRootState } from '../../../../core/reducers';
 import { RootStackParamList } from '../../../../navigation/MainNavigator';
@@ -83,6 +84,13 @@ const DebitCardTab = () => {
     const toggleCardVisibility = () => {
         setIsAccountDetailsVisible(!isAccountDetailsVisible)
     }
+    const getSpendPercentage = () => {
+        let value: any = 0;
+        if (userData.account_details.weekly_spent && userWeeklyLimit) {
+            value = (userData.account_details.weekly_spent / userWeeklyLimit);
+        }
+        return value;
+    }
     /**
      * TODO: Should move LoadingView and ErrorView in High order components
      */
@@ -113,6 +121,21 @@ const DebitCardTab = () => {
                                         onEyePress={toggleCardVisibility}>
                                     </DebitCardView>
 
+                                    {userWeeklyLimit ?
+                                        <>
+                                            <View style={styles.userLimitProgressBarMain}>
+                                                <Text style={styles.flex1}>{CONSTANTS.DEBIT_CARD_SPENDING_LIMIT}</Text>
+                                                <Text>
+                                                    <Text style={{ color: AppColors.APP_GREEN }}>{'$' + userData?.account_details.weekly_spent}</Text>
+                                                    <Text style={{ color: AppColors.SECONDARY_TEXT }}>{'  |  $' + userWeeklyLimit}</Text>
+                                                </Text>
+                                            </View>
+                                            <View style={styles.progressBarBaseContainer}>
+                                                <View style={[styles.progressBarSolid, { width: W * getSpendPercentage(), borderTopColor: getSpendPercentage() >= 1 ? "red" : AppColors.APP_GREEN, }]}></View>
+                                            </View>
+                                        </>
+                                        : null
+                                    }
                                     <OptionsRow onPress={() => { }} optionIcon={IMAGE_ASSETS.ICON_TOP_UP} optionTitle={CONSTANTS.OPTION_TITLE_DEBIT_TOP_UP} optionSubTitle={CONSTANTS.OPTION_SUBTITLE_TOP_UP} ></OptionsRow>
                                     <OptionsRow onPress={handleWeeklyButtonClick} optionIcon={IMAGE_ASSETS.ICON_LIMIT_DARK} optionTitle={CONSTANTS.OPTION_TITLE_WEEKLY_SPENDING} optionSubTitle={CONSTANTS.OPTION_SUBTITLE_WEEKLY_SPENDING} showToggle={true} isButtonActive={isWeeklyButtonEnabled}></OptionsRow>
                                     <OptionsRow onPress={() => { }} optionIcon={IMAGE_ASSETS.ICON_FREEZE} optionTitle={CONSTANTS.OPTION_TITLE_FREEZE_CARD} optionSubTitle={CONSTANTS.OPTION_SUBTITLE_FREEZE_CARD} showToggle={true}></OptionsRow>

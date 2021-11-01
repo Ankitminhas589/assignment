@@ -2,6 +2,7 @@ export const CONSTANTS = {
     DEBIT_CARD_HEADER_TITLE: "Debit Card",
     SET_LIMIT_HEADER_TITLE: 'Spending limit',
     SET_LIMIT_SUBTITLE: 'Here weekly means the last 7 days - not the calendar week',
+    DEBIT_CARD_SPENDING_LIMIT: 'Debit card spending limit',
     AVAILABLE_BALANCE: "Available balance",
     CURRENCY_SYMBOL: "S$",
     SHOW_CARD_NUMBER: 'Show card number',
