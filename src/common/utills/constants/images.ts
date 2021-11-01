@@ -21,4 +21,5 @@ export const IMAGE_ASSETS = {
     ICON_RED_EYE_CLOSE: require('../../../assets/icon_red_eye_close.png'),
     ICON_RED_EYE_OPEN: require('../../../assets/icon_red_eye_open.png'),
     ICON_CARD_BRAND: require('../../../assets/icon_card_brand.png'),
+    ICON_BACK: require('../../../assets/icon_back.png'),
 }

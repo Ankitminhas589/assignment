@@ -9,7 +9,6 @@ type IProps = {
     children: React.ReactNode;
     statusBarColor?: string;
     headerTitle?: string;
-    onBackPress?: () => void
 };
 
 const ScreenComponent: React.FC<IProps> = ({
@@ -18,7 +17,6 @@ const ScreenComponent: React.FC<IProps> = ({
     safeAreStyle,
     children,
     statusBarColor,
-    onBackPress = () => { }
 }) => {
     return (
         <SafeAreaView style={safeAreStyle || styles.defaultSafeAreaStyle}>
@@ -35,7 +33,7 @@ const styles = StyleSheet.create({
     },
     defaultContentContainerStyle: {
         flex: 1, backgroundColor: AppColors.WHITE
-    },
+    }
 
 });
 

@@ -1,5 +1,6 @@
 export const CONSTANTS = {
     DEBIT_CARD_HEADER_TITLE: "Debit Card",
+    SET_LIMIT_HEADER_TITLE: 'Spending limit',
     AVAILABLE_BALANCE: "Available balance",
     CURRENCY_SYMBOL: "S$",
     SHOW_CARD_NUMBER: 'Show card number',
@@ -9,6 +10,7 @@ export const CONSTANTS = {
     EXP_DATE_PREFIX: 'Thru: ',
     LOADING: 'Loading...',
     SORRY_ERROR: 'Sorry, connection with server failed.',
+    SET_LIMIT_MESSAGE: 'Set a weekly debit card spending limit',
     OPTION_TITLE_DEBIT_TOP_UP: 'Top-up account',
     OPTION_SUBTITLE_TOP_UP: 'Deposit money to your account to use with card',
     OPTION_TITLE_WEEKLY_SPENDING: 'Weekly spending limit',
@@ -18,5 +20,5 @@ export const CONSTANTS = {
     OPTION_TITLE_GET_NEW_CARD: 'Get a new card',
     OPTION_SUBTITLE_GET_NEW_CARD: 'This deactivates your current debit card',
     OPTION_TITLE_DEACTIVATED_CARD: 'Deactivated cards',
-    OPTION_SUBTITLE_DEACTIVATED_CARDS: 'Your previously deactivated cards',
+    OPTION_SUBTITLE_DEACTIVATED_CARDS: 'Your previously deactivated cards'
 }
