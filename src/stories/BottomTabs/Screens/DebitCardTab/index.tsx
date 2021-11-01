@@ -42,18 +42,23 @@ const DebitCardTab = () => {
     type tabScreenProps = StackNavigationProp<RootStackParamList, "BOTTOM_TAB_NAVIGATOR">;
     const navigation = useNavigation<tabScreenProps>();
     const [isAccountDetailsVisible, setIsAccountDetailsVisible] = useState(false)
-    const [isWeeklyButtonEnabled, setIsWeeklyButtonEnabled] = useState(false)
     const [screenIsLoading, setScreenIsLoading] = useState<boolean>(false);
     const [apiError, serAPIError] = useState<boolean>(false);
     const isNetConnected = useSelector<IRootState, Boolean>(state => state.common.isNetConnected);
     const userWeeklyLimit = useSelector<IRootState, number>(state => state.common.userWeeklyLimit);
     const userData = useSelector<IRootState, UserData>(state => state.common.userData);
-
+    const [isWeeklyButtonEnabled, setIsWeeklyButtonEnabled] = useState(userWeeklyLimit ? true : false)
     useEffect(() => {
         if (userData && userData.user_id) {
             setScreenIsLoading(false)
         }
-    }, [userData])
+    }, [userData]);
+
+    useEffect(() => {
+        if (userWeeklyLimit && userWeeklyLimit > 0) {
+            setIsWeeklyButtonEnabled(true)
+        }
+    }, [userWeeklyLimit])
 
     useEffect(() => {
         setScreenIsLoading(true)
@@ -109,7 +114,7 @@ const DebitCardTab = () => {
                                     </DebitCardView>
 
                                     <OptionsRow onPress={() => { }} optionIcon={IMAGE_ASSETS.ICON_TOP_UP} optionTitle={CONSTANTS.OPTION_TITLE_DEBIT_TOP_UP} optionSubTitle={CONSTANTS.OPTION_SUBTITLE_TOP_UP} ></OptionsRow>
-                                    <OptionsRow onPress={handleWeeklyButtonClick} optionIcon={IMAGE_ASSETS.ICON_LIMIT_DARK} optionTitle={CONSTANTS.OPTION_TITLE_WEEKLY_SPENDING} optionSubTitle={CONSTANTS.OPTION_SUBTITLE_WEEKLY_SPENDING} showToggle={true}></OptionsRow>
+                                    <OptionsRow onPress={handleWeeklyButtonClick} optionIcon={IMAGE_ASSETS.ICON_LIMIT_DARK} optionTitle={CONSTANTS.OPTION_TITLE_WEEKLY_SPENDING} optionSubTitle={CONSTANTS.OPTION_SUBTITLE_WEEKLY_SPENDING} showToggle={true} isButtonActive={isWeeklyButtonEnabled}></OptionsRow>
                                     <OptionsRow onPress={() => { }} optionIcon={IMAGE_ASSETS.ICON_FREEZE} optionTitle={CONSTANTS.OPTION_TITLE_FREEZE_CARD} optionSubTitle={CONSTANTS.OPTION_SUBTITLE_FREEZE_CARD} showToggle={true}></OptionsRow>
                                     <OptionsRow onPress={() => { }} optionIcon={IMAGE_ASSETS.ICON_ADD_CARD} optionTitle={CONSTANTS.OPTION_TITLE_GET_NEW_CARD} optionSubTitle={CONSTANTS.OPTION_SUBTITLE_GET_NEW_CARD}></OptionsRow>
                                     <OptionsRow onPress={() => { }} optionIcon={IMAGE_ASSETS.ICON_DEACTIVATED_CARDS} optionTitle={CONSTANTS.OPTION_TITLE_DEACTIVATED_CARD} optionSubTitle={CONSTANTS.OPTION_SUBTITLE_DEACTIVATED_CARDS}></OptionsRow>
