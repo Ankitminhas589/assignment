@@ -33,7 +33,7 @@ https://reactnative.dev/docs/environment-setup
 - npx react-native run-android
 used Android Studio version- Android Studio Arctic Fox | 2020.3.1 Patch 3
 
-Some Important paths
+# Some Important paths
 aseets- src/assets 
 fonts- src/assets/fonts
 redux and saga setup- src/core
@@ -45,6 +45,11 @@ api constants- src/common/utills/constants/api.ts
 other app constants & used text - src/common/utills/constants/constants.ts
 user data related type- src/common/utills/constants/types.ts
 colors: src/common/utills/theme/Colors.tsx
+
+# Main Screens Path
+debit-card-screen- src/stories/BottomTabs/Screens/DebitCardTab/index.tsx
+set-weekly-limit-screen- src/stories/SetLimitScreen/index.tsx
+
 
 #NOTES:-
 1.) I didn't write the unit test cases but I might add it in future.
