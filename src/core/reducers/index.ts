@@ -1,9 +1,8 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 import CommonReducer from './commonReducer';
 
-
 const RootReducer = combineReducers({
-    common: CommonReducer
-})
+  common: CommonReducer,
+});
 export type IRootState = ReturnType<typeof RootReducer>;
 export default RootReducer;
