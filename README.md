@@ -5,6 +5,7 @@
 - Debit card screen where you can hide and show card details on a tab
 - Set Weekly Limit of spent
 - If weekly spent is more then weekly limit then it will show red progress bar to alert you about it
+- Maximum limit a user can set is S$50000 for now and if you try to add more it will alert you that you can't set this limit
 
 - Typescript is used in this demo project
 

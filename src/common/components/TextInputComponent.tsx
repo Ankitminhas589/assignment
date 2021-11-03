@@ -1,25 +1,33 @@
 import React from 'react';
-import {Text, StyleSheet, View, TextInput} from 'react-native';
+import {Text, StyleSheet, View, TextInput, Alert} from 'react-native';
 import {CONSTANTS} from '../utills/constants/constants';
 import {AppColors} from '../utills/theme/Colors';
 import {_scaleText} from '../utills/utility';
 import 'intl';
 import 'intl/locale-data/jsonp/en';
+const maxLimitValue = 50000;
 type IProps = {
   onValueChange: (val: string) => void;
   value: string;
 };
 const CurrencyTextInputComponent: React.FC<IProps> = ({onValueChange, value}) => {
+  /**
+   * @param val text input value
+   * set formatted value after checking validations
+   */
   const validateEnteredValue = (val: string) => {
     if (val && val != '') {
       val = val.replace(/,/g, '');
     }
-    if (val == '') {
+    const parsedValue = Number.parseInt(val);
+    if (Number.isNaN(parsedValue) || parsedValue == 0) {
       onValueChange('');
-    } else if (val.match(/^[0-9]+$/) != null) {
-      val = val.replace(/^0+/, '');
-      val = new Intl.NumberFormat().format(parseInt(val));
-      onValueChange(val);
+    } else if (parsedValue > maxLimitValue) {
+      Alert.alert('Alert', `${CONSTANTS.WEEKLY_SPENDING_MAXIMUM_ERROR_MESSAGE}${maxLimitValue}`);
+    } else if (parsedValue.toString().match(/^[0-9]+$/) != null) {
+      let parsedString: string = parsedValue.toString().replace(/^0+/, '');
+      parsedString = new Intl.NumberFormat().format(parseInt(val));
+      onValueChange(parsedString);
     }
   };
   return (

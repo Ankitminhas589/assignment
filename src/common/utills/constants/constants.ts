@@ -24,6 +24,7 @@ export const CONSTANTS = {
   OPTION_SUBTITLE_GET_NEW_CARD: 'This deactivates your current debit card',
   OPTION_TITLE_DEACTIVATED_CARD: 'Deactivated cards',
   OPTION_SUBTITLE_DEACTIVATED_CARDS: 'Your previously deactivated cards',
+  WEEKLY_SPENDING_MAXIMUM_ERROR_MESSAGE: 'Your maximum weekly spending limit should be S$ ',
   SAVE: 'Save',
   QUICK_BUTTON_5: 'S$ 5,000',
   QUICK_BUTTON_10: 'S$ 10,000',
